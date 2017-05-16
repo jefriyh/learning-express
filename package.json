@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "forever index",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "setup": "mysql -u root -p < scripts/setup.sql"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -13,9 +14,13 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
+    "mysql": "^2.13.0",
+    "mysql2": "^1.2.0",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "sequelize": "^3.30.4",
+    "standard": "^10.0.2"
   }
 }
