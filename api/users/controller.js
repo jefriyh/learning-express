@@ -1,7 +1,11 @@
+var User = require('../../models/').User
+
 module.exports = {
   getAll: (req, res, next) => {
-    res.status(200).send({
-      message: 'GET ALL'
+    User.findAll().then(users => {
+      res.send({
+        data: users
+      })
     })
   },
 
@@ -19,10 +23,10 @@ module.exports = {
   },
 
   create: (req, res, next) => {
-    res.status(201).send({
-      body: req.body,
-      params: req.params,
-      query: req.query
+    User.create({first_name: req.body.first_name, last_name: req.body.last_name}).then(user => {
+      res.status(201).send({
+        result: user
+      })
     })
   },
 

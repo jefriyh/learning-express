@@ -6,7 +6,7 @@
   "scripts": {
     "start": "forever index",
     "dev": "nodemon",
-    "setup": "mysql -u root -p < scripts/setup.sql"
+    "setup": "opt/lampp/bin/mysql -u root -p < scripts/setup.sql"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
